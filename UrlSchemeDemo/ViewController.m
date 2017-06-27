@@ -40,5 +40,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)micLauncherButtonPressed:(id)sender
+{
+    NSURL* aMiclinicUrl = [NSURL URLWithString:@"miclinic://launcher"];
+    [[UIApplication sharedApplication] openURL:aMiclinicUrl
+                                       options:@{}
+                             completionHandler:^(BOOL success) {
+                                 NSLog(@"Opened %@", aMiclinicUrl);
+                             }];
+}
 
 @end

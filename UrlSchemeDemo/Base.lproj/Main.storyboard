@@ -33,12 +33,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnt-XM-FQM">
+                                <rect key="frame" x="123.5" y="318.5" width="127" height="30"/>
+                                <state key="normal" title="MI Clinic Launcher"/>
+                                <connections>
+                                    <action selector="micLauncherButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rPe-jE-AEL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TA7-3i-sNb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-180" id="Jzn-t3-zso"/>
                             <constraint firstItem="2gk-0n-db9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PGA-l4-fpv"/>
+                            <constraint firstItem="gnt-XM-FQM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YeR-Y1-6dw"/>
                             <constraint firstItem="2gk-0n-db9" firstAttribute="top" secondItem="TA7-3i-sNb" secondAttribute="bottom" constant="15" id="hWK-YO-zzE"/>
+                            <constraint firstItem="gnt-XM-FQM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yK7-I8-rAK"/>
                             <constraint firstItem="TA7-3i-sNb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yQv-IL-Go6"/>
                         </constraints>
                     </view>
