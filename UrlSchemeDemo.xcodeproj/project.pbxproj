@@ -13,6 +13,8 @@
 		381708DA1EFB28B1008C9F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381708D81EFB28B1008C9F85 /* Main.storyboard */; };
 		381708DC1EFB28B1008C9F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381708DB1EFB28B1008C9F85 /* Assets.xcassets */; };
 		381708DF1EFB28B1008C9F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381708DD1EFB28B1008C9F85 /* LaunchScreen.storyboard */; };
+		38EF28721F02D09B0098D28C /* CMRsaEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EF286F1F02D09B0098D28C /* CMRsaEncryptor.m */; };
+		38EF28731F02D09B0098D28C /* CMRsaDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EF28711F02D09B0098D28C /* CMRsaDecryptor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		381708DB1EFB28B1008C9F85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		381708DE1EFB28B1008C9F85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		381708E01EFB28B1008C9F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38EF286E1F02D09B0098D28C /* CMRsaEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRsaEncryptor.h; sourceTree = "<group>"; };
+		38EF286F1F02D09B0098D28C /* CMRsaEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRsaEncryptor.m; sourceTree = "<group>"; };
+		38EF28701F02D09B0098D28C /* CMRsaDecryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRsaDecryptor.h; sourceTree = "<group>"; };
+		38EF28711F02D09B0098D28C /* CMRsaDecryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRsaDecryptor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,7 @@
 		381708C31EFB28B1008C9F85 = {
 			isa = PBXGroup;
 			children = (
+				38EF286D1F02D0890098D28C /* Encryption */,
 				381708CE1EFB28B1008C9F85 /* UrlSchemeDemo */,
 				381708CD1EFB28B1008C9F85 /* Products */,
 			);
@@ -77,6 +84,17 @@
 				381708D01EFB28B1008C9F85 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		38EF286D1F02D0890098D28C /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				38EF286E1F02D09B0098D28C /* CMRsaEncryptor.h */,
+				38EF286F1F02D09B0098D28C /* CMRsaEncryptor.m */,
+				38EF28701F02D09B0098D28C /* CMRsaDecryptor.h */,
+				38EF28711F02D09B0098D28C /* CMRsaDecryptor.m */,
+			);
+			name = Encryption;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,8 +170,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				381708D71EFB28B1008C9F85 /* ViewController.m in Sources */,
+				38EF28731F02D09B0098D28C /* CMRsaDecryptor.m in Sources */,
 				381708D41EFB28B1008C9F85 /* AppDelegate.m in Sources */,
 				381708D11EFB28B1008C9F85 /* main.m in Sources */,
+				38EF28721F02D09B0098D28C /* CMRsaEncryptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +334,7 @@
 				381708E51EFB28B1008C9F85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
