@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <JWT/JWT.h>
 
 @interface AppDelegate ()
 
@@ -30,27 +31,51 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
         });
+        
     }
     return YES;
 }
 
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-    BOOL allowURL = [[options objectForKey:UIApplicationOpenURLOptionsSourceApplicationKey] hasPrefix:@"com.countermind.miclinic.webiz"];
-    
-    if (allowURL)
+    BOOL aUrlIsValid = NO;
+    BOOL aUrlHasCorrectPrefix = [[options objectForKey:UIApplicationOpenURLOptionsSourceApplicationKey] hasPrefix:@"com.countermind.miclinic.webiz"];
+    if (aUrlHasCorrectPrefix)
     {
         NSDictionary* parameters = [self parametersDictionaryFromQuery:[url query]];
-        NSString* aUrlInfo = [NSString stringWithFormat:@"url:\n%@\n\nscheme:\n%@\n\nusername:\n%@\n\npassword:\n%@\n\nhost: %@\n\nparameters:\n%@"
-                              ,[url description]
-                              ,[url scheme]
-                              ,[url user] //encrypted
-                              ,[url password] //encrypted
-                              ,[url host]
-                              ,parameters];
+        NSString* aJwt = [parameters objectForKey:@"jwt"];
+        NSString* aPublicKeyPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"miclinic_public_key" ofType:@"crt"];
+        NSData* aPublicKey = [[NSData alloc] initWithContentsOfFile:aPublicKeyPath];
+        
+        JWTBuilder* aDecoderBuilder = [JWT decodeMessage:aJwt]
+                                    .secretData(aPublicKey)
+                                    .algorithmName(@"RS256");
+        
+        NSDictionary* aDecodedPayload = [aDecoderBuilder.decode objectForKey:@"payload"];
+        
+        NSString* aMessageToDisplay;
+        if (aDecoderBuilder.jwtError)
+        {
+            //something went wrong such as invalid signature or tampered message
+            //real app should refuse to process URL
+            aMessageToDisplay = [NSString stringWithFormat:@"Unable to decode jwt: %@", aDecoderBuilder.jwtError];
+        }
+        else
+        {
+            aUrlIsValid = YES;
+            aMessageToDisplay = [NSString stringWithFormat:@"url:\n%@\n\nscheme:\n%@\n\nusername:\n%@\n\npassword:\n%@\n\nhost: %@\n\npayload:\n%@\ncallback=%@"
+                                 ,[url description]
+                                 ,[url scheme]
+                                 ,[url user] //encrypted
+                                 ,[url password] //encrypted
+                                 ,[url host]
+                                 ,aDecodedPayload
+                                 ,[parameters objectForKey:@"callback"]];
+        }
+        
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:nil
-                                      message:aUrlInfo
+                                      message:aMessageToDisplay
                                       preferredStyle:UIAlertControllerStyleAlert];
         
         NSURL* aCallbackUrl = nil;
@@ -63,6 +88,7 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok"
                                                   style:UIAlertActionStyleDefault
                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                    //when ok is pressed, open the callback URL if there is one
                                                     if (aCallbackUrl)
                                                     {
                                                         [[UIApplication sharedApplication] openURL:aCallbackUrl
@@ -80,7 +106,7 @@
         });
     }
     
-    return allowURL;
+    return aUrlIsValid;
 }
 
 - (NSDictionary*)parametersDictionaryFromQuery:(NSString*)tQuery

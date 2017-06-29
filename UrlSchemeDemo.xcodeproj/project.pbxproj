@@ -13,8 +13,10 @@
 		381708DA1EFB28B1008C9F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381708D81EFB28B1008C9F85 /* Main.storyboard */; };
 		381708DC1EFB28B1008C9F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381708DB1EFB28B1008C9F85 /* Assets.xcassets */; };
 		381708DF1EFB28B1008C9F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381708DD1EFB28B1008C9F85 /* LaunchScreen.storyboard */; };
-		38EF28721F02D09B0098D28C /* CMRsaEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EF286F1F02D09B0098D28C /* CMRsaEncryptor.m */; };
-		38EF28731F02D09B0098D28C /* CMRsaDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 38EF28711F02D09B0098D28C /* CMRsaDecryptor.m */; };
+		38EF28801F02E1B80098D28C /* private_key_demo.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 38EF287B1F02D4800098D28C /* private_key_demo.p12 */; };
+		38EF28811F02E1BC0098D28C /* public_key_demo.crt in Resources */ = {isa = PBXBuildFile; fileRef = 38EF287A1F02D4770098D28C /* public_key_demo.crt */; };
+		38FD671F1F05A7B300B90737 /* miclinic_public_key.crt in Resources */ = {isa = PBXBuildFile; fileRef = 38FD671E1F05A7B300B90737 /* miclinic_public_key.crt */; };
+		87719F79E6F9DCF1C0BC4597 /* libPods-UrlSchemeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5865A1FF8FC0A84EB52E2879 /* libPods-UrlSchemeDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +30,14 @@
 		381708DB1EFB28B1008C9F85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		381708DE1EFB28B1008C9F85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		381708E01EFB28B1008C9F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38EF286E1F02D09B0098D28C /* CMRsaEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRsaEncryptor.h; sourceTree = "<group>"; };
-		38EF286F1F02D09B0098D28C /* CMRsaEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRsaEncryptor.m; sourceTree = "<group>"; };
-		38EF28701F02D09B0098D28C /* CMRsaDecryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMRsaDecryptor.h; sourceTree = "<group>"; };
-		38EF28711F02D09B0098D28C /* CMRsaDecryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMRsaDecryptor.m; sourceTree = "<group>"; };
+		38EF287A1F02D4770098D28C /* public_key_demo.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key_demo.crt; sourceTree = "<group>"; };
+		38EF287B1F02D4800098D28C /* private_key_demo.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key_demo.p12; sourceTree = "<group>"; };
+		38EF287C1F02E0CC0098D28C /* private_key_demo.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_key_demo.pem; sourceTree = "<group>"; };
+		38EF287D1F02E0CC0098D28C /* public_key_demo.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_key_demo.pem; sourceTree = "<group>"; };
+		38FD671E1F05A7B300B90737 /* miclinic_public_key.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = miclinic_public_key.crt; sourceTree = "<group>"; };
+		49008FDE65E6D34ED8292ADA /* Pods-UrlSchemeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrlSchemeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UrlSchemeDemo/Pods-UrlSchemeDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		5865A1FF8FC0A84EB52E2879 /* libPods-UrlSchemeDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UrlSchemeDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B171988B4C802F236896709A /* Pods-UrlSchemeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrlSchemeDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-UrlSchemeDemo/Pods-UrlSchemeDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,18 +45,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87719F79E6F9DCF1C0BC4597 /* libPods-UrlSchemeDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DE942B6EA029EC3BAA01810 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49008FDE65E6D34ED8292ADA /* Pods-UrlSchemeDemo.debug.xcconfig */,
+				B171988B4C802F236896709A /* Pods-UrlSchemeDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		381708C31EFB28B1008C9F85 = {
 			isa = PBXGroup;
 			children = (
 				38EF286D1F02D0890098D28C /* Encryption */,
 				381708CE1EFB28B1008C9F85 /* UrlSchemeDemo */,
 				381708CD1EFB28B1008C9F85 /* Products */,
+				0DE942B6EA029EC3BAA01810 /* Pods */,
+				ABC6EF46F6583918C3FBC2B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,12 +107,21 @@
 		38EF286D1F02D0890098D28C /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
-				38EF286E1F02D09B0098D28C /* CMRsaEncryptor.h */,
-				38EF286F1F02D09B0098D28C /* CMRsaEncryptor.m */,
-				38EF28701F02D09B0098D28C /* CMRsaDecryptor.h */,
-				38EF28711F02D09B0098D28C /* CMRsaDecryptor.m */,
+				38EF287C1F02E0CC0098D28C /* private_key_demo.pem */,
+				38EF287D1F02E0CC0098D28C /* public_key_demo.pem */,
+				38EF287A1F02D4770098D28C /* public_key_demo.crt */,
+				38EF287B1F02D4800098D28C /* private_key_demo.p12 */,
+				38FD671E1F05A7B300B90737 /* miclinic_public_key.crt */,
 			);
 			name = Encryption;
+			sourceTree = "<group>";
+		};
+		ABC6EF46F6583918C3FBC2B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5865A1FF8FC0A84EB52E2879 /* libPods-UrlSchemeDemo.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 381708E31EFB28B1008C9F85 /* Build configuration list for PBXNativeTarget "UrlSchemeDemo" */;
 			buildPhases = (
+				FE3BF578C6666B216F9FC72F /* [CP] Check Pods Manifest.lock */,
 				381708C81EFB28B1008C9F85 /* Sources */,
 				381708C91EFB28B1008C9F85 /* Frameworks */,
 				381708CA1EFB28B1008C9F85 /* Resources */,
+				B1ACB2DFB77C18C61735F9A7 /* [CP] Embed Pods Frameworks */,
+				F42B8512F71D958EEF52286B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,7 +186,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38EF28811F02E1BC0098D28C /* public_key_demo.crt in Resources */,
 				381708DF1EFB28B1008C9F85 /* LaunchScreen.storyboard in Resources */,
+				38FD671F1F05A7B300B90737 /* miclinic_public_key.crt in Resources */,
+				38EF28801F02E1B80098D28C /* private_key_demo.p12 in Resources */,
 				381708DC1EFB28B1008C9F85 /* Assets.xcassets in Resources */,
 				381708DA1EFB28B1008C9F85 /* Main.storyboard in Resources */,
 			);
@@ -164,16 +197,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B1ACB2DFB77C18C61735F9A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UrlSchemeDemo/Pods-UrlSchemeDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F42B8512F71D958EEF52286B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UrlSchemeDemo/Pods-UrlSchemeDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE3BF578C6666B216F9FC72F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		381708C81EFB28B1008C9F85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				381708D71EFB28B1008C9F85 /* ViewController.m in Sources */,
-				38EF28731F02D09B0098D28C /* CMRsaDecryptor.m in Sources */,
 				381708D41EFB28B1008C9F85 /* AppDelegate.m in Sources */,
 				381708D11EFB28B1008C9F85 /* main.m in Sources */,
-				38EF28721F02D09B0098D28C /* CMRsaEncryptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +372,7 @@
 		};
 		381708E41EFB28B1008C9F85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49008FDE65E6D34ED8292ADA /* Pods-UrlSchemeDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9YGD2MC2Z6;
@@ -305,6 +385,7 @@
 		};
 		381708E51EFB28B1008C9F85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B171988B4C802F236896709A /* Pods-UrlSchemeDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9YGD2MC2Z6;
