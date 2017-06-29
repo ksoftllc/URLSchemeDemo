@@ -91,6 +91,7 @@
                                                     //when ok is pressed, open the callback URL if there is one
                                                     if (aCallbackUrl)
                                                     {
+                                                        //TODO: should create and append a JWT before invoking callback
                                                         [[UIApplication sharedApplication] openURL:aCallbackUrl
                                                                                            options:@{}
                                                                                  completionHandler:^(BOOL success) {
@@ -102,7 +103,9 @@
         
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert
+                                                                                         animated:YES
+                                                                                       completion:nil];
         });
     }
     
