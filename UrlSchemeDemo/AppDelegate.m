@@ -82,6 +82,8 @@
         NSString* aCallbackProvided = [parameters objectForKey:@"callback"];
         if (aCallbackProvided)
         {
+            //must remove any percent encoding in the callback!!!
+            aCallbackProvided = [aCallbackProvided stringByRemovingPercentEncoding];
             aCallbackUrl = [NSURL URLWithString:aCallbackProvided];
         }
         
@@ -113,23 +115,23 @@
     return queryDict;
 }
 
--(void (^)(UIAlertAction * _Nonnull action)) openCallbackUrl:(NSURL*)aCallbackUrl
+-(void (^)(UIAlertAction * _Nonnull action)) openCallbackUrl:(NSURL*)tCallbackUrl
 {
     return ^(UIAlertAction * _Nonnull action)
     {
         //when ok is pressed, open the callback URL if there is one
-        if (aCallbackUrl)
+        if (tCallbackUrl)
         {
-            [[UIApplication sharedApplication] openURL:aCallbackUrl
+            [[UIApplication sharedApplication] openURL:tCallbackUrl
                                                options:@{}
                                      completionHandler:^(BOOL success) {
                                          if (success)
                                          {
-                                             NSLog(@"Opened %@", aCallbackUrl);
+                                             NSLog(@"Opened %@", tCallbackUrl);
                                          }
                                          else
                                          {
-                                             NSLog(@"Failed to open %@", aCallbackUrl);
+                                             NSLog(@"Failed to open %@", tCallbackUrl);
                                          }
                                      }];
         }
