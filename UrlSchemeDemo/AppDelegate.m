@@ -88,20 +88,6 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok"
                                                   style:UIAlertActionStyleDefault
                                                 handler:[self openCallbackUrl:aCallbackUrl]]];
-//                          ^(UIAlertAction * _Nonnull action) {
-//                                                    //when ok is pressed, open the callback URL if there is one
-//                                                    if (aCallbackUrl)
-//                                                    {
-//                                                        //TODO: should create and append a JWT before invoking callback
-//                                                        [[UIApplication sharedApplication] openURL:aCallbackUrl
-//                                                                                           options:@{}
-//                                                                                 completionHandler:^(BOOL success) {
-//                                                                                     NSLog(@"Opened %@", aCallbackUrl);
-//                                                                                 }];
-//
-//                                                    }
-//                                                }]];
-//        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert
@@ -127,26 +113,32 @@
     return queryDict;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-}
-
--(void(^)(UIAlertAction * _Nonnull action)) openCallbackUrl:(NSURL*)aCallbackUrl
+-(void (^)(UIAlertAction * _Nonnull action)) openCallbackUrl:(NSURL*)aCallbackUrl
 {
-    return ^(UIAlertAction * _Nonnull action){
+    return ^(UIAlertAction * _Nonnull action)
+    {
         //when ok is pressed, open the callback URL if there is one
         if (aCallbackUrl)
         {
-            //TODO: should create and append a JWT before invoking callback
             [[UIApplication sharedApplication] openURL:aCallbackUrl
                                                options:@{}
                                      completionHandler:^(BOOL success) {
-                                         NSLog(@"Opened %@", aCallbackUrl);
+                                         if (success)
+                                         {
+                                             NSLog(@"Opened %@", aCallbackUrl);
+                                         }
+                                         else
+                                         {
+                                             NSLog(@"Failed to open %@", aCallbackUrl);
+                                         }
                                      }];
-            
         }
     };
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
