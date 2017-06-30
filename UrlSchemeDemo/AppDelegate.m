@@ -87,20 +87,21 @@
         
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok"
                                                   style:UIAlertActionStyleDefault
-                                                handler:^(UIAlertAction * _Nonnull action) {
-                                                    //when ok is pressed, open the callback URL if there is one
-                                                    if (aCallbackUrl)
-                                                    {
-                                                        //TODO: should create and append a JWT before invoking callback
-                                                        [[UIApplication sharedApplication] openURL:aCallbackUrl
-                                                                                           options:@{}
-                                                                                 completionHandler:^(BOOL success) {
-                                                                                     NSLog(@"Opened %@", aCallbackUrl);
-                                                                                 }];
-
-                                                    }
-                                                }]];
-        
+                                                handler:[self openCallbackUrl:aCallbackUrl]]];
+//                          ^(UIAlertAction * _Nonnull action) {
+//                                                    //when ok is pressed, open the callback URL if there is one
+//                                                    if (aCallbackUrl)
+//                                                    {
+//                                                        //TODO: should create and append a JWT before invoking callback
+//                                                        [[UIApplication sharedApplication] openURL:aCallbackUrl
+//                                                                                           options:@{}
+//                                                                                 completionHandler:^(BOOL success) {
+//                                                                                     NSLog(@"Opened %@", aCallbackUrl);
+//                                                                                 }];
+//
+//                                                    }
+//                                                }]];
+//        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert
@@ -131,6 +132,22 @@
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
 }
 
+-(void(^)(UIAlertAction * _Nonnull action)) openCallbackUrl:(NSURL*)aCallbackUrl
+{
+    return ^(UIAlertAction * _Nonnull action){
+        //when ok is pressed, open the callback URL if there is one
+        if (aCallbackUrl)
+        {
+            //TODO: should create and append a JWT before invoking callback
+            [[UIApplication sharedApplication] openURL:aCallbackUrl
+                                               options:@{}
+                                     completionHandler:^(BOOL success) {
+                                         NSLog(@"Opened %@", aCallbackUrl);
+                                     }];
+            
+        }
+    };
+}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.

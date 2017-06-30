@@ -14,7 +14,6 @@
 		381708DC1EFB28B1008C9F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381708DB1EFB28B1008C9F85 /* Assets.xcassets */; };
 		381708DF1EFB28B1008C9F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381708DD1EFB28B1008C9F85 /* LaunchScreen.storyboard */; };
 		38EF28801F02E1B80098D28C /* private_key_demo.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 38EF287B1F02D4800098D28C /* private_key_demo.p12 */; };
-		38EF28811F02E1BC0098D28C /* public_key_demo.crt in Resources */ = {isa = PBXBuildFile; fileRef = 38EF287A1F02D4770098D28C /* public_key_demo.crt */; };
 		38FD671F1F05A7B300B90737 /* miclinic_public_key.crt in Resources */ = {isa = PBXBuildFile; fileRef = 38FD671E1F05A7B300B90737 /* miclinic_public_key.crt */; };
 		87719F79E6F9DCF1C0BC4597 /* libPods-UrlSchemeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5865A1FF8FC0A84EB52E2879 /* libPods-UrlSchemeDemo.a */; };
 /* End PBXBuildFile section */
@@ -186,7 +185,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38EF28811F02E1BC0098D28C /* public_key_demo.crt in Resources */,
 				381708DF1EFB28B1008C9F85 /* LaunchScreen.storyboard in Resources */,
 				38FD671F1F05A7B300B90737 /* miclinic_public_key.crt in Resources */,
 				38EF28801F02E1B80098D28C /* private_key_demo.p12 in Resources */,
