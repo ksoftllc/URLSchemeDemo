@@ -13,7 +13,11 @@
 		381708DA1EFB28B1008C9F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381708D81EFB28B1008C9F85 /* Main.storyboard */; };
 		381708DC1EFB28B1008C9F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381708DB1EFB28B1008C9F85 /* Assets.xcassets */; };
 		381708DF1EFB28B1008C9F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381708DD1EFB28B1008C9F85 /* LaunchScreen.storyboard */; };
-		38EF28801F02E1B80098D28C /* private_key_demo.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 38EF287B1F02D4800098D28C /* private_key_demo.p12 */; };
+		384972721F218B7B000C6D2C /* private_key_demo.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 3849726E1F218B7B000C6D2C /* private_key_demo.p12 */; };
+		384972731F218B7B000C6D2C /* private_key_demo.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3849726F1F218B7B000C6D2C /* private_key_demo.pem */; };
+		384972741F218B7B000C6D2C /* public_key_demo.crt in Resources */ = {isa = PBXBuildFile; fileRef = 384972701F218B7B000C6D2C /* public_key_demo.crt */; };
+		384972751F218B7B000C6D2C /* public_key_demo.pem in Resources */ = {isa = PBXBuildFile; fileRef = 384972711F218B7B000C6D2C /* public_key_demo.pem */; };
+		385AADEE1F215B7000F506B5 /* CMSecureUrlScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 385AADED1F215B7000F506B5 /* CMSecureUrlScheme.m */; };
 		38FD671F1F05A7B300B90737 /* miclinic_public_key.crt in Resources */ = {isa = PBXBuildFile; fileRef = 38FD671E1F05A7B300B90737 /* miclinic_public_key.crt */; };
 		87719F79E6F9DCF1C0BC4597 /* libPods-UrlSchemeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5865A1FF8FC0A84EB52E2879 /* libPods-UrlSchemeDemo.a */; };
 /* End PBXBuildFile section */
@@ -29,10 +33,12 @@
 		381708DB1EFB28B1008C9F85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		381708DE1EFB28B1008C9F85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		381708E01EFB28B1008C9F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38EF287A1F02D4770098D28C /* public_key_demo.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key_demo.crt; sourceTree = "<group>"; };
-		38EF287B1F02D4800098D28C /* private_key_demo.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key_demo.p12; sourceTree = "<group>"; };
-		38EF287C1F02E0CC0098D28C /* private_key_demo.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_key_demo.pem; sourceTree = "<group>"; };
-		38EF287D1F02E0CC0098D28C /* public_key_demo.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_key_demo.pem; sourceTree = "<group>"; };
+		3849726E1F218B7B000C6D2C /* private_key_demo.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key_demo.p12; sourceTree = "<group>"; };
+		3849726F1F218B7B000C6D2C /* private_key_demo.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_key_demo.pem; sourceTree = "<group>"; };
+		384972701F218B7B000C6D2C /* public_key_demo.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key_demo.crt; sourceTree = "<group>"; };
+		384972711F218B7B000C6D2C /* public_key_demo.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = public_key_demo.pem; sourceTree = "<group>"; };
+		385AADEC1F215B7000F506B5 /* CMSecureUrlScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMSecureUrlScheme.h; sourceTree = "<group>"; };
+		385AADED1F215B7000F506B5 /* CMSecureUrlScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMSecureUrlScheme.m; sourceTree = "<group>"; };
 		38FD671E1F05A7B300B90737 /* miclinic_public_key.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = miclinic_public_key.crt; sourceTree = "<group>"; };
 		49008FDE65E6D34ED8292ADA /* Pods-UrlSchemeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UrlSchemeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UrlSchemeDemo/Pods-UrlSchemeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5865A1FF8FC0A84EB52E2879 /* libPods-UrlSchemeDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UrlSchemeDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +90,8 @@
 			children = (
 				381708D21EFB28B1008C9F85 /* AppDelegate.h */,
 				381708D31EFB28B1008C9F85 /* AppDelegate.m */,
+				385AADEC1F215B7000F506B5 /* CMSecureUrlScheme.h */,
+				385AADED1F215B7000F506B5 /* CMSecureUrlScheme.m */,
 				381708D51EFB28B1008C9F85 /* ViewController.h */,
 				381708D61EFB28B1008C9F85 /* ViewController.m */,
 				381708D81EFB28B1008C9F85 /* Main.storyboard */,
@@ -106,10 +114,10 @@
 		38EF286D1F02D0890098D28C /* Encryption */ = {
 			isa = PBXGroup;
 			children = (
-				38EF287C1F02E0CC0098D28C /* private_key_demo.pem */,
-				38EF287D1F02E0CC0098D28C /* public_key_demo.pem */,
-				38EF287A1F02D4770098D28C /* public_key_demo.crt */,
-				38EF287B1F02D4800098D28C /* private_key_demo.p12 */,
+				3849726E1F218B7B000C6D2C /* private_key_demo.p12 */,
+				3849726F1F218B7B000C6D2C /* private_key_demo.pem */,
+				384972701F218B7B000C6D2C /* public_key_demo.crt */,
+				384972711F218B7B000C6D2C /* public_key_demo.pem */,
 				38FD671E1F05A7B300B90737 /* miclinic_public_key.crt */,
 			);
 			name = Encryption;
@@ -185,10 +193,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384972741F218B7B000C6D2C /* public_key_demo.crt in Resources */,
 				381708DF1EFB28B1008C9F85 /* LaunchScreen.storyboard in Resources */,
+				384972731F218B7B000C6D2C /* private_key_demo.pem in Resources */,
 				38FD671F1F05A7B300B90737 /* miclinic_public_key.crt in Resources */,
-				38EF28801F02E1B80098D28C /* private_key_demo.p12 in Resources */,
+				384972721F218B7B000C6D2C /* private_key_demo.p12 in Resources */,
 				381708DC1EFB28B1008C9F85 /* Assets.xcassets in Resources */,
+				384972751F218B7B000C6D2C /* public_key_demo.pem in Resources */,
 				381708DA1EFB28B1008C9F85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				381708D71EFB28B1008C9F85 /* ViewController.m in Sources */,
+				385AADEE1F215B7000F506B5 /* CMSecureUrlScheme.m in Sources */,
 				381708D41EFB28B1008C9F85 /* AppDelegate.m in Sources */,
 				381708D11EFB28B1008C9F85 /* main.m in Sources */,
 			);
@@ -376,7 +388,7 @@
 				DEVELOPMENT_TEAM = 9YGD2MC2Z6;
 				INFOPLIST_FILE = UrlSchemeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.countermind.UrlSchemeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.envisiontechnology.UrlSchemeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -389,7 +401,7 @@
 				DEVELOPMENT_TEAM = 9YGD2MC2Z6;
 				INFOPLIST_FILE = UrlSchemeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.countermind.UrlSchemeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.envisiontechnology.UrlSchemeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

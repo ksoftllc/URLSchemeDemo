@@ -63,33 +63,23 @@
         else
         {
             aUrlIsValid = YES;
-            aMessageToDisplay = [NSString stringWithFormat:@"url:\n%@\n\nscheme:\n%@\n\nusername:\n%@\n\npassword:\n%@\n\nhost: %@\n\npayload:\n%@\ncallback=%@"
+            aMessageToDisplay = [NSString stringWithFormat:@"url:\n%@\n\nscheme:\n%@\n\nusername:\n%@\n\npassword:\n%@\n\nhost: %@\n\npayload:\n%@"
                                  ,[url description]
                                  ,[url scheme]
                                  ,[url user] //encrypted
                                  ,[url password] //encrypted
                                  ,[url host]
-                                 ,aDecodedPayload
-                                 ,[parameters objectForKey:@"callback"]];
+                                 ,aDecodedPayload];
         }
         
-        UIAlertController * alert=   [UIAlertController
+        UIAlertController * alert = [UIAlertController
                                       alertControllerWithTitle:nil
                                       message:aMessageToDisplay
                                       preferredStyle:UIAlertControllerStyleAlert];
         
-        NSURL* aCallbackUrl = nil;
-        NSString* aCallbackProvided = [parameters objectForKey:@"callback"];
-        if (aCallbackProvided)
-        {
-            //must remove any percent encoding in the callback!!!
-            aCallbackProvided = [aCallbackProvided stringByRemovingPercentEncoding];
-            aCallbackUrl = [NSURL URLWithString:aCallbackProvided];
-        }
-        
         [alert addAction:[UIAlertAction actionWithTitle:@"Ok"
                                                   style:UIAlertActionStyleDefault
-                                                handler:[self openCallbackUrl:aCallbackUrl]]];
+                                                handler:nil]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert
@@ -113,29 +103,6 @@
         [queryDict setObject:val forKey:key];
     }
     return queryDict;
-}
-
--(void (^)(UIAlertAction * _Nonnull action)) openCallbackUrl:(NSURL*)tCallbackUrl
-{
-    return ^(UIAlertAction * _Nonnull action)
-    {
-        //when ok is pressed, open the callback URL if there is one
-        if (tCallbackUrl)
-        {
-            [[UIApplication sharedApplication] openURL:tCallbackUrl
-                                               options:@{}
-                                     completionHandler:^(BOOL success) {
-                                         if (success)
-                                         {
-                                             NSLog(@"Opened %@", tCallbackUrl);
-                                         }
-                                         else
-                                         {
-                                             NSLog(@"Failed to open %@", tCallbackUrl);
-                                         }
-                                     }];
-        }
-    };
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

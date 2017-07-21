@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CMSecureUrlScheme.h"
 
 @interface ViewController ()
 
@@ -40,14 +41,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+//all button presses will direct here - button label will have the URL in it
 - (IBAction)micLauncherButtonPressed:(id)sender
 {
-    NSURL* aMiclinicUrl = [NSURL URLWithString:@"miclinic://launcher"];
-    [[UIApplication sharedApplication] openURL:aMiclinicUrl
-                                       options:@{}
-                             completionHandler:^(BOOL success) {
-                                 NSLog(@"Opened %@", aMiclinicUrl);
-                             }];
+    UIButton* aButton = sender;
+    NSString* aUrlFromButtonTitle = aButton.titleLabel.text;
+    //this will attach a signed JWT to query string
+    CMSecureUrlSchemeOpener* aUrlOpener = [[CMSecureUrlSchemeOpener alloc] initWithUrlString:aUrlFromButtonTitle];
+    [aUrlOpener openWithCompletionBlock:^(BOOL success) {
+        NSLog(@"Opened %@ - %@", aUrlFromButtonTitle, success?@"Y":@"N");
+    }];
 }
 
 @end
